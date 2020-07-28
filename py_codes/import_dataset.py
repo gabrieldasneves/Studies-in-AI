@@ -44,11 +44,11 @@ counting_water = column_water.value_counts().sort_index() #contando cada ocorren
 print(counting_water)
 
 print("histograma da distribuição de gravidade")
-column_gravity.fillna(method='ffill', limit=10000) #preenchendo os NAN 
-plt.hist(column_gravity, bins=30)
+column_gravity = column_gravity.fillna(method='ffill', limit=60).sort_index()
+plt.hist(column_gravity, bins=60)
 plt.show()
 
-print("histograma de distribuição de agua na superficie")
-column_water.fillna(method='ffill', limit=10000)
-plt.hist(column_water, bins=30)
-plt.show()
+#print("histograma de distribuição de agua na superficie")
+#column_water = column_water.fillna(method='ffill', limit=60)
+#plt.hist(column_water, bins=30)
+#plt.show()
